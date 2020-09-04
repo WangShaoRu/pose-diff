@@ -1,5 +1,20 @@
 VIS_KP = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
-LIMBS = [[1, 0], [8 ,1], [1, 2], [2, 3], [3, 4], [1, 5], [5, 6], [6, 7],
+JOINT = ['nose',
+         'neck',
+         'right shoulder',
+         'right elbow',
+         'right wrist',
+         'left shoulder',
+         'left elbow',
+         'left wrist',
+         'waist',
+         'right hip',
+         'right knee',
+         'right ankle',
+         'left hip',
+         'left knee',
+         'left ankle']
+LIMBS = [[1, 0], [8, 1], [1, 2], [2, 3], [3, 4], [1, 5], [5, 6], [6, 7],
          [8, 9], [9, 10], [10, 11], [8, 12], [12, 13], [13, 14]]
 
 KP_TREE = {}
