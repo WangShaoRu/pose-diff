@@ -67,6 +67,6 @@ class PoseDiff(object):
             return 0.0
         ref_vec, ref_len = limb_ref.normalize()
         test_vec, test_len = limb_test.normalize()
-        cos_score = (ref_vec * test_vec).sum()
+        cos_score = (ref_vec * test_vec).sum().clip(min=0)
         dis_score = min(ref_len / test_len, test_len / ref_len)
         return cos_score * dis_score
