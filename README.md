@@ -30,4 +30,4 @@ Optional arguments:
 - `TEST_PATH`: Path to the test image.
 - `show`: If specified, results will be displayed in a new window.
 
-### A notebook demo can be found in demo/pose_diff.ipynb
+### A notebook demo run on [google colab](https://colab.research.google.com/) can be found in demo/pose_diff.ipynb
