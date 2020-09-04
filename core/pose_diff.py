@@ -6,8 +6,8 @@ from .pose_exception import BodyTooShortException, KPMissingException
 
 
 class PoseDiff(object):
-    def __init__(self):
-        self.body_min_distance = 20
+    def __init__(self, body_min_distance=20):
+        self.body_min_distance = body_min_distance
         self._eps = 1e-6
 
     def pose_diff(self, ref_pose, test_pose):
