@@ -88,7 +88,7 @@ def pose_diff_video(ref_img, test_video, restore_path):
     cap = cv2.VideoCapture(test_video)
 
     out = cv2.VideoWriter(restore_path,
-                          cv2.VideoWriter_fourcc(*'XVID'),
+                          cv2.VideoWriter_fourcc(*'mp4v'),
                           cap.get(cv2.CAP_PROP_FPS),
                           (int(cap.get(cv2.CAP_PROP_FRAME_WIDTH)), int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))))
 
@@ -148,7 +148,7 @@ def pose_diff_video(ref_img, test_video, restore_path):
                 scores = None
             scores_list.append(scores)
             test_img_with_pose = display_pose(
-                test_img, test_pose, color=(0, 255, 255), scores=scores)
+                frame, test_pose, color=(0, 255, 255), scores=scores)
             out.write(test_img_with_pose)
         else:
             break
