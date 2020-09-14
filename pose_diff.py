@@ -18,7 +18,7 @@ def parse_args():
     parser.add_argument(
         '--test', type=str, default='./input/test.jpg', help='Path to test image/video')
     parser.add_argument(
-        '--result', type=str, default='./output/', help='Path to restore the result video')
+        '--result', type=str, default='./result/', help='Path to restore the result video')
     parser.add_argument('--show', action='store_true', help='Display')
     args = parser.parse_args()
 
