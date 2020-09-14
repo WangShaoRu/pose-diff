@@ -86,8 +86,9 @@ def pose_diff_video(ref_img, test_video, restore_path):
     :return: 
     """
     cap = cv2.VideoCapture(test_video)
+
     out = cv2.VideoWriter(restore_path,
-                          cap.get(cv2.CAP_PROP_FOURCC),
+                          cv2.VideoWriter_fourcc(*'XVID'),
                           cap.get(cv2.CAP_PROP_FPS),
                           (int(cap.get(cv2.CAP_PROP_FRAME_WIDTH)), int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))))
 
@@ -97,8 +98,6 @@ def pose_diff_video(ref_img, test_video, restore_path):
     except ImportError:
         print('Warning: openpose has not been properly installed! Pre-stored pose will be used!')
         use_openpose_flag = False
-        # ref_pose = np.load('input/ref_pose.npy')
-        # test_poses = np.load('input/test_poses.npy')
     except Exception as e:
         raise e
     
@@ -153,8 +152,10 @@ def pose_diff_video(ref_img, test_video, restore_path):
             out.write(test_img_with_pose)
         else:
             break
-
-        return ref_pose, test_poses, ref_img_with_pose, restore_path, scores_list
+    
+    cap.release()
+    out.release()
+    return ref_pose, test_poses, ref_img_with_pose, restore_path, scores_list
 
 
 if __name__ == '__main__':
