@@ -30,4 +30,17 @@ Optional arguments:
 - `TEST_PATH`: Path to the test image.
 - `show`: If specified, results will be displayed in a new window.
 
+Then, you can find the result file: `ref.jpg` and `test.jpg` in `result/` if `--show` is not specified.
+
+Alternatively, you can try the video input.
+```
+python pose_diff.py [--ref ${REF_PATH} [--test ${TEST_PATH} [--result ${RESULT_PATH}]]]
+```
+Optional arguments:
+- `REF_PATH`: Path to the reference image.
+- `TEST_PATH`: Path to the test video.
+- `RESULT_PATH`: Path to restore the result video.
+
+Then, you can find the result file: `ref.jpg` and `test.mp4` in `result/`.
+
 ### A notebook demo run on [google colab](https://colab.research.google.com/) can be found in demo/pose_diff.ipynb
